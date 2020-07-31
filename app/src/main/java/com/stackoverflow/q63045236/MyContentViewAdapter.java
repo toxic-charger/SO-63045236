@@ -1,6 +1,7 @@
 package com.stackoverflow.q63045236;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.stackoverflow.q63045236.model.POJOListItem;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyContentViewAdapter extends RecyclerView.Adapter<MyContentViewAdapter.ViewHolder> {
@@ -39,6 +41,7 @@ public class MyContentViewAdapter extends RecyclerView.Adapter<MyContentViewAdap
     private TextView tvHeader;
     private LinearLayout tvContainer;
     private Context context;
+    List<View> views;
 
     ViewHolder(View v) {
       super(v);
@@ -48,11 +51,30 @@ public class MyContentViewAdapter extends RecyclerView.Adapter<MyContentViewAdap
     }
 
     void bind(POJOListItem item) {
+      // cache the inflated view list in view tag and retrieve while binding
+      if (itemView.getTag() != null && itemView.getTag() instanceof List) {
+        //noinspection unchecked
+        views = (List<View>) itemView.getTag();
+        Log.d("MyContentViewAdapter","Obtaining view list from the view tag, size:"+views.size());
+      } else {
+        views = new ArrayList<>();
+        itemView.setTag(views);
+        Log.d("MyContentViewAdapter","Creating new list");
+      }
+      for (int i = views.size(); i < item.contents.size(); i++) {
+        Log.d("MyContentViewAdapter","Inflating child view and adding : "+i);
+        View v = LayoutInflater.from(context).inflate(
+                R.layout.layout_content_key_view,
+                null,
+                false
+            );
+        views.add(v);
+      }
+
       tvHeader.setText(item.id);
       tvContainer.removeAllViews();
       for (int i = 0; i < item.contents.size(); i++) {
-        View childView =
-            LayoutInflater.from(context).inflate(R.layout.layout_content_key_view, null, false);
+        View childView = views.get(i);
         TextView tvKey = childView.findViewById(R.id.tv_key);
         TextView tvContent = childView.findViewById(R.id.tv_content);
         tvKey.setText(item.keys.get(i));

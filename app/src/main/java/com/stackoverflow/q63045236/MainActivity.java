@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
       + "        \"ab\": \"some content\",\n"
       + "        \"id\": \"240\",\n"
       + "        \"key\": \"value\"\n"
+      + "      },\n"
+      + "      \"4\": {\n"
+      + "        \"ab\": \"some content\",\n"
+      + "        \"id\": \"240\",\n"
+      + "        \"key\": \"value\"\n"
       + "      }\n"
       + "    },\n"
       + "    \"2\": {\n"
@@ -128,12 +133,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     // TODO: test with 50000 list items
-    /*
+
     POJOListItem pojoListItem = pojo.get(0);
     for (int i = 0; i < 50000; i++) {
       pojo.add(pojoListItem);
     }
-    */
+
 
     RecyclerView recyclerView = findViewById(R.id.rv);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
