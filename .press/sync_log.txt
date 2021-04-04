@@ -1,22 +1,19 @@
-Syncing notes with 'Redmi Note 5' on Sun, 17 Jan 2021 13:57:05 UTC
-Resetting to sha1: 4ddedec (Update sync logs).
+Syncing notes with 'Redmi Note 5' on Sun, 04 Apr 2021 16:09:58 UTC
+Resetting to sha1: cac0985 (Update sync logs).
 
 Nothing to pull.
-Nothing to process.
 
-Committing unsynced notes (1):
- • markdown_guideh.md (old = markdown_guide.md, id=8f4192fd-38cf-4c15-8ac7-028d15fe5fc3)
-   creating/updating
+Pruned invalid file name records
 
-Processing commits from 4ddedec to 674e38a
- • 4ddedec - Update sync logs
- • f055626 - Rename 'markdown_guide.md' → 'markdown_guideh.md'
- • 674e38a - Update 'markdown_guideh.md'
+Processing commits from cac0985 to 223bb67
+ • cac0985 - Update sync logs
+ • 223bb67 - Prune invalid file name records
 
 Syncing changes (2)
- • Rename(fromPath=.press/registers/markdown_guide, toPath=.press/registers/markdown_guideh)
- • Rename(fromPath=markdown_guide.md, toPath=markdown_guideh.md)
-   skipping markdown_guideh.md (already saved)
+ • Rename(fromPath=.press/registers/markdown_guideh, toPath=.press/registers/markdown_guideh.meta)
+ • Rename(fromPath=.press/registers/welcome_to_press, toPath=.press/registers/welcome_to_press.meta)
+
+Nothing to commit.
 
 Pushing changes
-Wrapping up sync (before push) on Sun, 17 Jan 2021 13:57:12 UTC
+Wrapping up sync (before push) on Sun, 04 Apr 2021 16:10:10 UTC
